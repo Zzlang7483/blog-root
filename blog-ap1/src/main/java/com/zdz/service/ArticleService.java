@@ -1,5 +1,6 @@
 package com.zdz.service;
 
+import com.zdz.dao.pojo.Article;
 import com.zdz.vo.ArticleVo;
 import com.zdz.vo.Result;
 import com.zdz.vo.params.PageParams;
@@ -13,4 +14,15 @@ public interface ArticleService {
      * @return
      */
     List<ArticleVo> listArticlesPage(PageParams pageParams);
+
+    /**
+     * 最热文章
+     * @param limit
+     * @return
+     */
+    Result hotArticle(int limit);
+
+    Result newArticle(int limit);
+
+    Result listArchives();
 }

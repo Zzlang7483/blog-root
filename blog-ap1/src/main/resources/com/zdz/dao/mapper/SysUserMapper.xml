@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdz.dao.mapper.SysUserMapper">
+
+    <select id="findUserByAccount" resultType="com.zdz.dao.pojo.SysUser">
+        SELECT * FROM `ms_sys_user` where account= #{account}
+    </select>
+
+</mapper>

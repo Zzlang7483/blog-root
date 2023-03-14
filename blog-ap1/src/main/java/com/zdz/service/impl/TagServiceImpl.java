@@ -8,8 +8,10 @@ import lombok.Lombok;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -34,5 +36,18 @@ public class TagServiceImpl implements TagService {
     public List<TagVo> findTagsByArticleId(Long id) {
         List<Tag> tags = tagMapper.findTagsByArticleId(id);
         return copyList(tags);
+    }
+
+    @Override
+    public List<TagVo> hot(int limit) {
+
+        List<Long> hotsTagIds =  tagMapper.findHotTagIds(limit);
+
+        if(CollectionUtils.isEmpty(hotsTagIds)){
+            return Collections.emptyList();
+        }
+        List<Tag> tagList = tagMapper.findTagsByTagIds(hotsTagIds);
+
+        return copyList(tagList);
     }
 }

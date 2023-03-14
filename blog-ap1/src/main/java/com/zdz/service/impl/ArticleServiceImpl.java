@@ -3,6 +3,7 @@ package com.zdz.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zdz.dao.dos.Archives;
 import com.zdz.dao.mapper.ArticleMapper;
 import com.zdz.dao.mapper.TagMapper;
 import com.zdz.dao.pojo.Article;
@@ -18,12 +19,15 @@ import org.joda.time.DateTime;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 import static com.alibaba.fastjson.JSONPatch.OperationType.copy;
+import static net.sf.jsqlparser.parser.feature.Feature.limit;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -61,10 +65,45 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<ArticleVo> listArticlesPage(PageParams pageParams) {
-        QueryWrapper<Article> queryWrapper = new QueryWrapper<>();
-        Page<Article> page = new Page<>(pageParams.getPage(),pageParams.getPageSize());
-        Page<Article> articlePage = articleMapper.selectPage(page, queryWrapper);
-        List<ArticleVo> articleVoList = copyList(articlePage.getRecords(),true,false,true);
+        Page<Article> page = new Page<>(pageParams.getPage(), pageParams.getPageSize());
+        LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
+//        queryWrapper.eq(Article::getIsDelete,0);
+        //是否置顶进行排序
+        queryWrapper.orderByDesc(Article::getCreateDate);
+        Page<Article> articlePage = articleMapper.selectPage(page,queryWrapper);
+
+        List<Article> records = articlePage.getRecords();
+        List<ArticleVo> articleVoList = copyList(records,true,true,true);
         return articleVoList;
+
+    }
+
+    @Override
+    public Result hotArticle(int limit) {
+        LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Article::getViewCounts);
+        queryWrapper.select(Article::getId,Article::getTitle);
+        queryWrapper.last("limit "+limit);
+        //select id ,title from article order by view_counts desc limit 5
+        List<Article> articles = articleMapper.selectList(queryWrapper);
+        return Result.success(copyList(articles,false,false,false));
+    }
+
+    @Override
+    public Result newArticle(int limit) {
+        LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Article::getCreateDate);
+        queryWrapper.select(Article::getId,Article::getTitle);
+        queryWrapper.last("limit "+limit);
+        //select id ,title from article order by create_date desc limit
+        List<Article> articles = articleMapper.selectList(queryWrapper);
+        return Result.success(copyList(articles,false,false,false));
+
+    }
+
+    @Override
+    public Result listArchives() {
+        List<Archives> archives =  articleMapper.listArchives();
+        return Result.success(archives);
     }
 }
