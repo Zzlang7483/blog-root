@@ -10,4 +10,6 @@
         from ms_article
         group by year ,month
     </select>
+
+
 </mapper>

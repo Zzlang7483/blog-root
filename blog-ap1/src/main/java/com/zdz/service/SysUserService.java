@@ -2,6 +2,7 @@ package com.zdz.service;
 
 import com.zdz.dao.pojo.SysUser;
 import com.zdz.vo.Result;
+import com.zdz.vo.UserVo;
 
 import java.lang.reflect.AccessibleObject;
 
@@ -15,4 +16,6 @@ public interface SysUserService {
     SysUser findUserByAccount(String account);
 
     void save(SysUser sysUser);
+
+    UserVo findUserVoById(Long id);
 }

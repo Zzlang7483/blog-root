@@ -1,16 +1,15 @@
 package com.zdz.controller;
 
+import com.zdz.common.aop.LogAnnotation;
 import com.zdz.dao.pojo.Article;
 import com.zdz.service.ArticleService;
 import com.zdz.vo.ArticleVo;
 import com.zdz.vo.Result;
+import com.zdz.vo.params.ArticleParam;
 import com.zdz.vo.params.PageParams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,8 +41,19 @@ public class ArticleController {
     }
 
     @PostMapping("/listArchives")
+    //加上此注解代表要对此接口记录日志
+    @LogAnnotation(module = "文章" ,operation = "获取文章列表")
     public Result listArchives(){
         return articleService.listArchives();
     }
 
+    @PostMapping("view/{id}")
+    public Result findArticleById(@PathVariable("id") Long id){
+        ArticleVo articleVo = articleService.findArticleById(id);
+        return Result.success(articleVo);
+    }
+    @PostMapping("publish")
+    public Result publish(@RequestBody ArticleParam articleParam){
+        return articleService.publish(articleParam);
+    }
 }

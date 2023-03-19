@@ -4,42 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb73ee8d-c419-47db-aca8-d8bb720428d5" name="Changes" comment="change">
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/LogoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/TagsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/dos/Archives.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/ArticleBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/handler/AllExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/handler/LoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/LoginServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/utils/JWTUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/utils/UserThreadLocal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/ErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/LoginUserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/params/LoginParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/resources/com/zdz/dao/mapper/ArticleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/resources/com/zdz/dao/mapper/SysUserMapper.xml" afterDir="false" />
+    <list default="true" id="fb73ee8d-c419-47db-aca8-d8bb720428d5" name="Changes" comment="3月14">
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/common/aop/LogAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/common/aop/LogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/config/ThreadPoolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/ArticleBodyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/ArticleTagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/ArticleTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/ThreadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/utils/HttpContextUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/utils/IpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/ArticleBodyVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/CategoryVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/CommentVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/UserVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/params/ArticleBodyParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/params/ArticleParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/params/CommentParam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/config/WebMVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/config/WebMVCConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/TagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/mapper/TagMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/TagsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/controller/TagsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/dao/pojo/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/handler/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/handler/LoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/ArticleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/SysUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/TagService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/ArticleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/SysUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/TagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/TagVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/TagVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/resources/com.zdz.dao.mapper/TagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/resources/com/zdz/dao/mapper/TagMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/ArticleVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/vo/ArticleVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-ap1/src/main/resources/com/zdz/dao/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-ap1/src/main/resources/com/zdz/dao/mapper/ArticleMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +56,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -169,7 +176,13 @@
       <workItem from="1678710664350" duration="9469000" />
       <workItem from="1678750800193" duration="3450000" />
       <workItem from="1678765531349" duration="1432000" />
-      <workItem from="1678766978674" duration="13284000" />
+      <workItem from="1678766978674" duration="14118000" />
+      <workItem from="1678847926788" duration="2771000" />
+      <workItem from="1679021098905" duration="3574000" />
+      <workItem from="1679104691496" duration="7546000" />
+      <workItem from="1679120854245" duration="7350000" />
+      <workItem from="1679128667371" duration="239000" />
+      <workItem from="1679188270920" duration="4085000" />
     </task>
     <task id="LOCAL-00001" summary="3/9">
       <created>1678329196958</created>
@@ -192,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678354317014</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="3月14">
+      <created>1678799910802</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678799910802</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +233,15 @@
     <MESSAGE value="3/9" />
     <MESSAGE value="pom change" />
     <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="3月14" />
+    <option name="LAST_COMMIT_MESSAGE" value="3月14" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/blog-ap1/src/main/java/com/zdz/service/impl/ArticleServiceImpl.java" line="103">
+        <watch expression="article" language="JAVA" />
+      </inline-watch>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

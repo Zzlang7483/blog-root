@@ -3,6 +3,7 @@ package com.zdz.service;
 import com.zdz.dao.pojo.Article;
 import com.zdz.vo.ArticleVo;
 import com.zdz.vo.Result;
+import com.zdz.vo.params.ArticleParam;
 import com.zdz.vo.params.PageParams;
 
 import java.util.List;
@@ -25,4 +26,13 @@ public interface ArticleService {
     Result newArticle(int limit);
 
     Result listArchives();
+
+    /**
+     * 产看文章详情
+     * @param id
+     * @return
+     */
+    ArticleVo findArticleById(Long id);
+
+    Result publish(ArticleParam articleParam);
 }

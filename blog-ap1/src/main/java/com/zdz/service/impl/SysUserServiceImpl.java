@@ -10,6 +10,8 @@ import com.zdz.utils.JWTUtils;
 import com.zdz.vo.ErrorCode;
 import com.zdz.vo.LoginUserVo;
 import com.zdz.vo.Result;
+import com.zdz.vo.UserVo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -77,6 +79,22 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public void save(SysUser sysUser) {
        this.sysUserMapper.insert(sysUser);
+    }
+
+    @Override
+    public UserVo findUserVoById(Long id) {
+        SysUser sysUser = sysUserMapper.selectById(id);
+        if (sysUser == null){
+            sysUser = new SysUser();
+            sysUser.setId(1L);
+            sysUser.setAvatar("/static/img/logo.b3a48c0.png");
+            sysUser.setNickname("zdz");
+        }
+        UserVo userVo = new UserVo();
+        userVo.setAvatar(sysUser.getAvatar());
+        userVo.setNickname(sysUser.getNickname());
+        userVo.setId(sysUser.getId());
+        return userVo;
     }
 
 

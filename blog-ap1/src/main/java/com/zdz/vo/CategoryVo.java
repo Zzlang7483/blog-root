@@ -1,16 +1,14 @@
-package com.zdz.dao.pojo;
+package com.zdz.vo;
 
 import lombok.Data;
 
 @Data
-public class Category {
+public class CategoryVo {
 
     private Long id;
 
     private String avatar;
 
     private String categoryName;
-
-    private String description;
 
 }
